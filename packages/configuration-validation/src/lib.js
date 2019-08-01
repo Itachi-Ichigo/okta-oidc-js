@@ -32,7 +32,7 @@ configUtil.buildConfigObject = (config) => {
     clientId: config.clientId || config.client_id,
     issuer: config.issuer,
     redirectUri: config.redirectUri || config.redirect_uri,
-    grantType: config.grantType,
+    pkce: config.pkce,
     tokenManager: {
       storage: config.storage,
       autoRenew: config.autoRenew || config.auto_renew
@@ -50,7 +50,6 @@ configUtil.assertIssuer = (issuer, testing = {}) => {
     /* eslint-disable-next-line no-console */
     console.warn(httpsWarning);
   }
-
 
   if (!issuer) {
     throw new ConfigurationValidationError('Your Okta URL is missing. ' + copyMessage);
