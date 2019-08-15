@@ -62,7 +62,9 @@ describe('Jwt Verifier', () => {
 
     it('should allow me to verify Okta access tokens', () => {
       return getAccessToken(issuer1AccessTokenParams)
-      .then(accessToken => verifier.verifyAccessToken(accessToken, expectedAud))
+      .then(accessToken => {
+        return verifier.verifyAccessToken(accessToken, expectedAud);
+      })
       .then(jwt => {
         expect(jwt.claims.iss).toBe(ISSUER);
       });
