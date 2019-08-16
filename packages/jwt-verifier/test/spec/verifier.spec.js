@@ -29,7 +29,7 @@ const REDIRECT_URI = constants.REDIRECT_URI
 const OKTA_TESTING_DISABLEHTTPSCHECK = constants.OKTA_TESTING_DISABLEHTTPSCHECK
 
 // Some tests makes LIVE requests using getAccessToken(). These may take much longer than normal tests
-const LONG_TIMEOUT = 20000;
+const LONG_TIMEOUT = 60000;
 
 // Used to get an access token from the AS
 const issuer1AccessTokenParams = {
