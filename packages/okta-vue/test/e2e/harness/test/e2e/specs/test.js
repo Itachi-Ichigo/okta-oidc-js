@@ -21,7 +21,7 @@ module.exports = {
 
     // On the protected page
     browser.expect.element('#logout-button').to.be.present.before(2000)
-    browser.expect.element('.protected').text.to.equal('Protected!').before(2000)
+    browser.expect.element('.protected').text.to.contain('Protected!').before(2000)
     browser.expect.element('.protected .userinfo').text.to.contain('email').before(2000)
     browser.assert.urlContains('/protected')
 
@@ -67,7 +67,7 @@ module.exports = {
       .waitForElementVisible('#logout-button', 20000)
 
     // On the protected page
-    browser.expect.element('.protected').text.to.equal('Protected!').before(2000)
+    browser.expect.element('.protected').text.to.contain('Protected!').before(2000)
     browser.expect.element('.protected .userinfo').text.to.contain('email').before(2000)
     browser.assert.urlContains('/protected')
 
